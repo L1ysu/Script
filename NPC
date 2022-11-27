@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class NPC : MonoBehaviour
+{
+    // здоровье нпс
+    public int heath;
+    int heath = 5;
+    //уровень нпс
+    public int level;
+    int level = 1;
+    //скорость нпс
+    public int speed; 
+    float speed = 1.2f;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+      // прибавляет к количеству жизней NPC его уровень
+    heath = level + heath;
+    print(heath);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+      //NPC должен двигаться постоянно вперёд
+    Vector 3newPosition = transform.position;
+    newPosition.z += speed * Time.deltaTime;
+    transform.position = newPosition.z += speed * Time.deltaTime;  
+    }
+}
