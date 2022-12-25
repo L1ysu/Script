@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Platform : MonoBehaviour
+{
+    // Start is called before the first frame update
+    {
+        public float speed;
+    public Vector3 direction;
+    publick bool isActive;
+
+    private void Update()
+    {
+        if (isActive)
+        {
+            transform.position += direction * speed * Time.dataTime;
+        }    
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag=="PlatformaStop")
+        {
+            direction *= -1;
+        }
+        if (other.tag =="Player")
+        {
+            isActive = false;
+        }
+    }
+
+}
